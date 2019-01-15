@@ -6,7 +6,12 @@ namespace Zoo.Classes
 {
     abstract class Mammal : Animal
     {
-        public override string BodyCovering { get; set; }
+        private string _garbageString = "";
+
+        public override string BodyCovering {
+            get { return "hair"; }
+            set { _garbageString = value; }
+        }
 
         public abstract void Travel();
     }

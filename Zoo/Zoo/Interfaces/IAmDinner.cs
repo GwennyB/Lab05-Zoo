@@ -6,6 +6,8 @@ namespace Zoo.Interfaces
 {
     interface IAmDinner
     {
+        bool goodWithKetchup { get; set; }
+
         void GetEaten();
     }
 }

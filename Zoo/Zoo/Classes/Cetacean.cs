@@ -6,16 +6,23 @@ namespace Zoo.Classes
 {
     abstract class Cetacean : Mammal
     {
-        public override bool LivesOnLand { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        private bool _garbageBool = false;
+
+        public override bool LivesOnLand
+        {
+            get { return false; }
+            set { _garbageBool = value; }
+        }
 
         public override void GiveBirth()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Just one calf at a time, and at long intervals. Mama needs a break between kids.");
         }
 
         public override void Travel()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Just keep swimming, just keep swimming, just keep swimming...swimmming...swimming...");
         }
     }
 }

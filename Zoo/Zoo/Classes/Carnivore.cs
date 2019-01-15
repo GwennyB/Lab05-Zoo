@@ -6,28 +6,20 @@ namespace Zoo.Classes
 {
     abstract class Carnivore : Mammal
     {
+
+        private bool _thumbs = true;
+        private bool _garbageBool = true;
+
         public bool HasThumbs
         {
-            get
-            {
-                // set true;
-            }
-            set
-            {
-                // can lose thumbs
-            }
+            get { return _thumbs;  }
+            set { _thumbs = value; }
         }
 
 
         public override bool LivesOnLand {
-            get
-            {
-                // set true;
-            }
-            set
-            {
-                // do not allow set;
-            }
+            get { return true; }
+            set { _garbageBool = value; }
         }
 
         public override void Travel()

@@ -13,7 +13,8 @@ namespace Zoo.Classes
 
         public abstract bool HangsWithPosse { get; set; }
 
-        public abstract void GiveBirth();
+        public abstract void Eat(IAmDinner critter);
+        public abstract void GiveBirth(int babies);
 
     }
 }

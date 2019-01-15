@@ -5,18 +5,23 @@ using Zoo.Interfaces;
 
 namespace Zoo.Classes
 {
-    class Bear : Carnivore, IEat
+    class Bear : Carnivore
     {
-        public override bool HangsWithPosse { get; set; }
+        private bool _garbageBool = true;
 
-        public void Eat(IAmDinner critter)
+        public override bool HangsWithPosse
+        {
+            get { return false; }
+            set { _garbageBool = value; }
+        }
+        public override void Eat(IAmDinner critter)
         {
             Console.WriteLine($"I am a bear, and I ate a {critter}. It was tasty.");
         }
 
-        public override void GiveBirth()
+        public override void GiveBirth(int babies)
         {
-            Console.WriteLine("I had a bear cub, and now I will sleep for a few months.");
+            Console.WriteLine($"I had {babies} little bear cub(s), and now I will sleep for a few months.");
         }
     }
 }
