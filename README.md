@@ -25,5 +25,10 @@ This interface is implemented by each species directly (ie - there isn't another
 IMAGE: Map of classes, updated to include interfaces.
 ![class map](assets/class-map-with-interfaces.png)
 
+## Testing
+The test suite confirms that inheritence and polymorphism are evident in the classes, that all concrete classes can be instantiated, and that interface are properly implemented.
+![unit tests](assets/unit-tests.png)
 
-
+## Results
+Program.cs demonstrates class instantiation and interface implementation.
+![console output](assets/program-output.png)
