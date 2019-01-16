@@ -23,7 +23,9 @@ namespace Zoo.Classes
             set { _goodWithKetchup = value; }
         }
 
-
+        /// <summary>
+        /// Reports instance's untimely demise to the console
+        /// </summary>
         void IAmDinner.GetEaten()
         {
             Console.WriteLine($"I am the animal kingdom's equivalent of Soylent Green. The rumors that I am tasty with ketchup are {goodWithKetchup};");

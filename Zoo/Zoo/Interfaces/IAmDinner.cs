@@ -10,6 +10,9 @@ namespace Zoo.Interfaces
 
         bool goodWithKetchup { get; set; }
 
+        /// <summary>
+        /// Requires implementing class to describe how it gets eaten
+        /// </summary>
         void GetEaten();
     }
 }

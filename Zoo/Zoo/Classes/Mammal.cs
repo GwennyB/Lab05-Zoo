@@ -13,6 +13,9 @@ namespace Zoo.Classes
             set { _garbageString = value; }
         }
 
+        /// <summary>
+        /// Requires children to define how they travel
+        /// </summary>
         public abstract void Travel();
     }
 }

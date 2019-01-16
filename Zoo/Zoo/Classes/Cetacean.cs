@@ -15,6 +15,10 @@ namespace Zoo.Classes
             set { _garbageBool = value; }
         }
 
+        /// <summary>
+        /// Inherited from Animal.
+        /// Describes instance's travel to the console.
+        /// </summary>
         public override void Travel()
         {
             Console.WriteLine("Just keep swimming, just keep swimming, just keep swimming...swimmming...swimming...");

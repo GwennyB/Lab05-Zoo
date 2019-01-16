@@ -7,8 +7,10 @@ namespace Zoo.Classes
 {
     public class Wolf : Carnivore
     {
-        private bool _garbageBool = true;
+        // redirect targets for unwanted property 'set' inputs
+        private bool _garbageBool = true; 
         private string _garbageString = "";
+
 
         public override string Species
         {
@@ -22,12 +24,22 @@ namespace Zoo.Classes
             set { _garbageBool = value; }
         }
 
+        /// <summary>
+        /// Reports instance's untimely demise to the console
+        /// </summary>
         public override bool Eat(IAmDinner critter)
         {
             Console.WriteLine($"This wolf ate a yummy {critter.Species}.");
             return true;
         }
 
+        /// <summary>
+        /// Instantiates new class instance for each baby;
+        /// Reports births to console;
+        /// Returns number of babies
+        /// </summary>
+        /// <param name="babies"> number of babies </param>
+        /// <returns> number of babies </returns>
         public override int GiveBirth(int babies)
         {
             for (int i = 0; i < babies; i++)
