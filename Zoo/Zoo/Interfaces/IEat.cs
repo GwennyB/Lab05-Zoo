@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Zoo.Interfaces
 {
-    interface IEat
+    public interface IEat
     {
-        void Eat(IAmDinner critter);
+        bool Eat(IAmDinner critter);
     }
 }

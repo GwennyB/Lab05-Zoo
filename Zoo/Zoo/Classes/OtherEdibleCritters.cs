@@ -5,7 +5,7 @@ using Zoo.Interfaces;
 
 namespace Zoo.Classes
 {
-    class OtherEdibleCritters : IAmDinner
+    public class OtherEdibleCritters : IAmDinner
     {
 
         private bool _goodWithKetchup = true;
@@ -24,7 +24,7 @@ namespace Zoo.Classes
         }
 
 
-        public void GetEaten()
+        void IAmDinner.GetEaten()
         {
             Console.WriteLine($"I am the animal kingdom's equivalent of Soylent Green. The rumors that I am tasty with ketchup are {goodWithKetchup};");
         }

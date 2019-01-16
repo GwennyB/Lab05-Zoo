@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Zoo.Classes
 {
-    abstract class Carnivore : Mammal
+    public abstract class Carnivore : Mammal
     {
 
         private bool _thumbs = true;

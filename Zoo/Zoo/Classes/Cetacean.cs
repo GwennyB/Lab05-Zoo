@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Zoo.Classes
 {
-    abstract class Cetacean : Mammal
+    public abstract class Cetacean : Mammal
     {
 
         private bool _garbageBool = false;

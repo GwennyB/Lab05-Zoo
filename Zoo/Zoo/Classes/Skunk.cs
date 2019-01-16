@@ -5,7 +5,7 @@ using Zoo.Interfaces;
 
 namespace Zoo.Classes
 {
-    class Skunk : Carnivore
+    public class Skunk : Carnivore
     {
         private bool _garbageBool = true;
         private string _garbageString = "";
@@ -22,18 +22,20 @@ namespace Zoo.Classes
             set { _garbageBool = value; }
         }
 
-        public override void Eat(IAmDinner critter)
+        public override bool Eat(IAmDinner critter)
         {
             Console.WriteLine($"I am a skunk, and I ate a {critter.Species}. It was tasty.");
+            return true;
         }
 
-        public override void GiveBirth(int babies)
+        public override int GiveBirth(int babies)
         {
             for (int i = 0; i < babies; i++)
             {
                 new Skunk();
             }
             Console.WriteLine($"Skunk babies are kinda adorable.... just look at these {babies}!");
+            return babies;
         }
     }
 }

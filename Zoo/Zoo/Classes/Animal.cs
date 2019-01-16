@@ -5,7 +5,7 @@ using Zoo.Interfaces;
 
 namespace Zoo.Classes
 {
-    abstract class Animal : IEat
+    public abstract class Animal : IEat
     {
         public abstract string Species { get; set; }
         public abstract string BodyCovering { get; set; }
@@ -14,8 +14,11 @@ namespace Zoo.Classes
 
         public abstract bool HangsWithPosse { get; set; }
 
-        public abstract void Eat(IAmDinner critter);
-        public abstract void GiveBirth(int babies);
+        public abstract bool Eat(IAmDinner critter);
+        public virtual int GiveBirth(int babies)
+        {
+            return babies;
+        }
 
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Zoo.Classes
 {
-    abstract class Mammal : Animal
+    public abstract class Mammal : Animal
     {
         private string _garbageString = "";
 

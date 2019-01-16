@@ -5,7 +5,7 @@ using Zoo.Interfaces;
 
 namespace Zoo.Classes
 {
-    class Dolphin : Cetacean, IAmDinner
+    public class Dolphin : Cetacean, IAmDinner
     {
         private bool _garbageBool = true;
         private string _garbageString = "";
@@ -28,23 +28,25 @@ namespace Zoo.Classes
             set { _garbageBool = value; }
         }
 
-        public override void Eat(IAmDinner critter)
+        public override bool Eat(IAmDinner critter)
         {
             Console.WriteLine($"Squeak squeak... SQUEAK! Mmmmm.... {critter.Species}.");
+            return true;
         }
 
-        public void GetEaten()
+        void IAmDinner.GetEaten()
         {
             Console.WriteLine("SQUEEEEEEEEAK!");
         }
 
-        public override void GiveBirth(int babies)
+        public override int GiveBirth(int babies)
         {
             for (int i = 0; i < babies; i++)
             {
                 new Dolphin();
             }
             Console.WriteLine($"Squeeeee..... {babies} new dolphin pup(s)!");
+            return babies;
         }
     }
 }

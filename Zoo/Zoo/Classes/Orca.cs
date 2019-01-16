@@ -5,7 +5,7 @@ using Zoo.Interfaces;
 
 namespace Zoo.Classes
 {
-    class Orca : Cetacean
+    public class Orca : Cetacean
     {
         private bool _garbageBool = true;
         private string _garbageString = "";
@@ -22,18 +22,20 @@ namespace Zoo.Classes
             set { _garbageBool = value; }
         }
 
-        public override void Eat(IAmDinner critter)
+        public override bool Eat(IAmDinner critter)
         {
             Console.WriteLine($"I am orca, and I play with my food. Today's toy is a {critter.Species}. Weeeeee! Yummmmm.");
+            return true;
         }
 
-        public override void GiveBirth(int babies)
+        public override int GiveBirth(int babies)
         {
             for (int i = 0; i < babies; i++)
             {
                 new Orca();
             }
             Console.WriteLine($"BREAKING NEWS: Orca pod K welcomes {babies} new member(s)!");
+            return babies;
         }
     }
 
