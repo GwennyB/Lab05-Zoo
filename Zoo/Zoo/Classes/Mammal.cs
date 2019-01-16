@@ -6,8 +6,11 @@ namespace Zoo.Classes
 {
     public abstract class Mammal : Animal
     {
+        // backing stores
+        // redirect targets for unwanted property 'set' inputs
         private string _garbageString = "";
 
+        // inherited properties overrides
         public override string BodyCovering {
             get { return "hair"; }
             set { _garbageString = value; }

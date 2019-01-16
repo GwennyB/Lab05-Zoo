@@ -6,20 +6,22 @@ namespace Zoo.Classes
 {
     public abstract class Carnivore : Mammal
     {
-
+        // backing stores
         private bool _thumbs = true;
+        // redirect targets for unwanted property 'set' inputs
         private bool _garbageBool = true;
 
+        // inherited property overrides
+        public override bool LivesOnLand {
+            get { return true; }
+            set { _garbageBool = value; }
+        }
+
+        // concrete properties to be inherited by deriving classes
         public bool HasThumbs
         {
             get { return _thumbs;  }
             set { _thumbs = value; }
-        }
-
-
-        public override bool LivesOnLand {
-            get { return true; }
-            set { _garbageBool = value; }
         }
 
         /// <summary>

@@ -7,9 +7,11 @@ namespace Zoo.Classes
 {
     public class Bear : Carnivore
     {
+        // redirect targets for unwanted property 'set' inputs
         private bool _garbageBool = true;
         private string _garbageString = "";
 
+        // inherited property overrides
         public override string Species
         {
             get { return "bear"; }

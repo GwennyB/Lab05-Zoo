@@ -7,9 +7,12 @@ namespace Zoo.Classes
 {
     public class Dolphin : Cetacean, IAmDinner
     {
+        // backing stores
+        // redirect targets for unwanted property 'set' inputs
         private bool _garbageBool = true;
         private string _garbageString = "";
 
+        // inherited property overrides and implementations
         public override string Species
         {
             get { return "dolphin"; }

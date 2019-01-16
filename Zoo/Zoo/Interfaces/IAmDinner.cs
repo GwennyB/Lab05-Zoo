@@ -6,8 +6,7 @@ namespace Zoo.Interfaces
 {
     public interface IAmDinner
     {
-        string Species { get; set; }
-
+        // property specific to interfacing behavior
         bool goodWithKetchup { get; set; }
 
         /// <summary>

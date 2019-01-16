@@ -7,16 +7,20 @@ namespace Zoo.Classes
 {
     public class OtherEdibleCritters : IAmDinner
     {
-
+        // backing stores
+        // redirect targets for unwanted property 'set' inputs
         private bool _goodWithKetchup = true;
         private string _species = "tasty critter";
 
+        // This critter is just here for food. For simplicity, he doesn't inherit from Animal. 
+        // But he still needs a Species so that others know what they're eating.
         public string Species
         {
             get { return _species; }
             set { _species = value; }
         }
 
+        // interface implementation
         public bool goodWithKetchup
         {
             get { return _goodWithKetchup; }

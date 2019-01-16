@@ -7,10 +7,12 @@ namespace Zoo.Classes
 {
     public class Orca : Cetacean
     {
+        // backing stores
         // redirect targets for unwanted property 'set' inputs
         private bool _garbageBool = true;
         private string _garbageString = "";
 
+        // inherited properties overrides
         public override string Species
         {
             get { return "orca"; }

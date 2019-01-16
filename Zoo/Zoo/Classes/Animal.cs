@@ -7,11 +7,10 @@ namespace Zoo.Classes
 {
     public abstract class Animal : IEat
     {
+        // properties for all Animals
         public abstract string Species { get; set; }
         public abstract string BodyCovering { get; set; }
-
         public abstract bool LivesOnLand { get; set; }
-
         public abstract bool HangsWithPosse { get; set; }
 
         /// <summary>
