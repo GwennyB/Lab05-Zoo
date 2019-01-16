@@ -8,6 +8,13 @@ namespace Zoo.Classes
     class Skunk : Carnivore
     {
         private bool _garbageBool = true;
+        private string _garbageString = "";
+
+        public override string Species
+        {
+            get { return "skunk"; }
+            set { _garbageString = value; }
+        }
 
         public override bool HangsWithPosse
         {
@@ -17,11 +24,15 @@ namespace Zoo.Classes
 
         public override void Eat(IAmDinner critter)
         {
-            Console.WriteLine($"I am a skunk, and I ate a {critter}. It was tasty.");
+            Console.WriteLine($"I am a skunk, and I ate a {critter.Species}. It was tasty.");
         }
 
         public override void GiveBirth(int babies)
         {
+            for (int i = 0; i < babies; i++)
+            {
+                new Skunk();
+            }
             Console.WriteLine($"Skunk babies are kinda adorable.... just look at these {babies}!");
         }
     }

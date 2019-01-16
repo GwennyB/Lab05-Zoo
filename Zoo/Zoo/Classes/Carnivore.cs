@@ -24,7 +24,7 @@ namespace Zoo.Classes
 
         public override void Travel()
         {
-            Console.WriteLine("I walk. Sometimes I run. I only swim for entertainment... not for transit. And I can't fly at all.");
+            Console.WriteLine($"I am a {Species}. I walk. Sometimes I run. I only swim for entertainment... not for transit. And I can't fly at all.");
         }
     }
 }

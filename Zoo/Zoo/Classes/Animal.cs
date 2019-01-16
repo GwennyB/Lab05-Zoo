@@ -7,6 +7,7 @@ namespace Zoo.Classes
 {
     abstract class Animal : IEat
     {
+        public abstract string Species { get; set; }
         public abstract string BodyCovering { get; set; }
 
         public abstract bool LivesOnLand { get; set; }

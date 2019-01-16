@@ -8,6 +8,13 @@ namespace Zoo.Classes
     class Dolphin : Cetacean, IAmDinner
     {
         private bool _garbageBool = true;
+        private string _garbageString = "";
+
+        public override string Species
+        {
+            get { return "dolphin"; }
+            set { _garbageString = value; }
+        }
 
         public override bool HangsWithPosse
         {
@@ -23,7 +30,7 @@ namespace Zoo.Classes
 
         public override void Eat(IAmDinner critter)
         {
-            Console.WriteLine("Squeak squeak... SQUEAK! Mmmmm.... {critter}.");
+            Console.WriteLine($"Squeak squeak... SQUEAK! Mmmmm.... {critter.Species}.");
         }
 
         public void GetEaten()
@@ -33,7 +40,11 @@ namespace Zoo.Classes
 
         public override void GiveBirth(int babies)
         {
-            Console.WriteLine("Squeeeee..... {babies} new dolphin pup(s)!");
+            for (int i = 0; i < babies; i++)
+            {
+                new Dolphin();
+            }
+            Console.WriteLine($"Squeeeee..... {babies} new dolphin pup(s)!");
         }
     }
 }

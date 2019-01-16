@@ -8,6 +8,13 @@ namespace Zoo.Classes
     class Weasel : Carnivore, IAmDinner
     {
         private bool _garbageBool = true;
+        private string _garbageString = "";
+
+        public override string Species
+        {
+            get { return "weasel"; }
+            set { _garbageString = value; }
+        }
 
         public override bool HangsWithPosse
         {
@@ -23,7 +30,7 @@ namespace Zoo.Classes
 
         public override void Eat(IAmDinner critter)
         {
-            Console.WriteLine($"Weasel find yummy {critter} and eat it.");
+            Console.WriteLine($"Weasel find yummy {critter.Species} and eat it.");
         }
 
         public void GetEaten()
@@ -33,6 +40,10 @@ namespace Zoo.Classes
 
         public override void GiveBirth(int babies)
         {
+            for (int i = 0; i < babies; i++)
+            {
+                new Weasel();
+            }
             Console.WriteLine($"Weasel made {babies} little weasel kittens!");
         }
     }
