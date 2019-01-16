@@ -8,6 +8,7 @@ namespace Zoo.Interfaces
     {
         // property specific to interfacing behavior
         bool goodWithKetchup { get; set; }
+        string Species { get; set; }
 
         /// <summary>
         /// Requires implementing class to describe how it gets eaten
