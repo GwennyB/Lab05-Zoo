@@ -28,9 +28,10 @@ namespace Zoo.Classes
         /// Inherited from Animal.
         /// Describes instance's travel to the console.
         /// </summary>
-        public override void Travel()
+        public override string Travel()
         {
             Console.WriteLine($"I am a {Species}. I walk. Sometimes I run. I only swim for entertainment... not for transit. And I can't fly at all.");
+            return "walk";
         }
     }
 }

@@ -19,12 +19,6 @@ namespace Zoo.Classes
             set { _garbageString = value; }
         }
 
-        public override bool HangsWithPosse
-        {
-            get { return true; }
-            set { _garbageBool = value; }
-        }
-
         public bool goodWithKetchup
         {
             get { return false; }

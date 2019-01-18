@@ -13,7 +13,7 @@ namespace UnitTests
         [Fact]
         public void Bear_CanBeInstantiated()
         {
-            Bear bear = new Bear();
+            Animal bear = new Bear();
             Assert.Equal("bear", bear.Species);
         }
 
@@ -23,7 +23,7 @@ namespace UnitTests
         [Fact]
         public void Dolphin_CanBeInstantiated()
         {
-            Dolphin dolphin = new Dolphin();
+            Animal dolphin = new Dolphin();
             Assert.Equal("dolphin", dolphin.Species);
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace UnitTests
         [Fact]
         public void Lion_CanBeInstantiated()
         {
-            Lion lion = new Lion();
+            Animal lion = new Lion();
             Assert.Equal("lion", lion.Species);
         }
 
@@ -42,7 +42,7 @@ namespace UnitTests
         [Fact]
         public void Narwhal_CanBeInstantiated()
         {
-            Narwhal narwhal = new Narwhal();
+            Animal narwhal = new Narwhal();
             Assert.Equal("narwhal", narwhal.Species);
         }
 
@@ -52,7 +52,7 @@ namespace UnitTests
         [Fact]
         public void Orca_CanBeInstantiated()
         {
-            Orca orca = new Orca();
+            Animal orca = new Orca();
             Assert.Equal("orca", orca.Species);
         }
 
@@ -62,7 +62,7 @@ namespace UnitTests
         [Fact]
         public void Skunk_CanBeInstantiated()
         {
-            Skunk skunk = new Skunk();
+            Animal skunk = new Skunk();
             Assert.Equal("skunk", skunk.Species);
         }
 
@@ -72,7 +72,7 @@ namespace UnitTests
         [Fact]
         public void Weasel_CanBeInstantiated()
         {
-            Weasel weasel = new Weasel();
+            Animal weasel = new Weasel();
             Assert.Equal("weasel", weasel.Species);
         }
 
@@ -82,7 +82,7 @@ namespace UnitTests
         [Fact]
         public void Wolf_CanBeInstantiated()
         {
-            Wolf wolf = new Wolf();
+            Animal wolf = new Wolf();
             Assert.Equal("wolf", wolf.Species);
         }
 
@@ -131,15 +131,206 @@ namespace UnitTests
         /// <summary>
         /// Verifies that interfaces are implemented.
         /// Bear implements IEat (inherited from Animal).
+        /// OtherEdibleCritters implements IAmDinner (directly).
+        /// </summary>
+        [Fact]
+        public void Bear_Eats_Other()
+        {
+            Bear eater = new Bear();
+            OtherEdibleCritters food = new OtherEdibleCritters();
+            Assert.True(eater.Eat(food));
+        }
+
+        /// <summary>
+        /// Verifies that interfaces are implemented.
+        /// Dolphin implements IEat (inherited from Animal).
+        /// OtherEdibleCritters implements IAmDinner (directly).
+        /// </summary>
+        [Fact]
+        public void Dolphin_Eats_Other()
+        {
+            Dolphin eater = new Dolphin();
+            OtherEdibleCritters food = new OtherEdibleCritters();
+            Assert.True(eater.Eat(food));
+        }
+
+        /// <summary>
+        /// Verifies that interfaces are implemented.
+        /// Lion implements IEat (inherited from Animal).
         /// Weasel implements IAmDinner (directly).
         /// </summary>
         [Fact]
-        public void Bear_Eats_Weasel()
+        public void Lion_Eats_Weasel()
         {
-            Bear bear = new Bear();
-            Weasel weasel = new Weasel();
-            Assert.True(bear.Eat(weasel));
+            Lion eater = new Lion();
+            Weasel food = new Weasel();
+            Assert.True(eater.Eat(food));
         }
 
+        /// <summary>
+        /// Verifies that interfaces are implemented.
+        /// Narwhal implements IEat (inherited from Animal).
+        /// OtherEdibleCritters implements IAmDinner (directly).
+        /// </summary>
+        [Fact]
+        public void Narwhal_Eats_Other()
+        {
+            Narwhal eater = new Narwhal();
+            OtherEdibleCritters food = new OtherEdibleCritters();
+            Assert.True(eater.Eat(food));
+        }
+
+        /// <summary>
+        /// Verifies that interfaces are implemented.
+        /// Orca implements IEat (inherited from Animal).
+        /// Narwhal implements IAmDinner (directly).
+        /// </summary>
+        [Fact]
+        public void Orca_Eats_Narwhal()
+        {
+            Orca eater = new Orca();
+            Narwhal food = new Narwhal();
+            Assert.True(eater.Eat(food));
+        }
+
+        /// <summary>
+        /// Verifies that interfaces are implemented.
+        /// Bear implements IEat (inherited from Animal).
+        /// Weasel implements IAmDinner (directly).
+        /// </summary>
+        [Fact]
+        public void Orca_Eats_Dolphin()
+        {
+            Orca eater = new Orca();
+            Dolphin food = new Dolphin();
+            Assert.True(eater.Eat(food));
+        }
+
+        /// <summary>
+        /// Verifies that interfaces are implemented.
+        /// Skunk implements IEat (inherited from Animal).
+        /// OtherEdibleCritters implements IAmDinner (directly).
+        /// </summary>
+        [Fact]
+        public void Skunk_Eats_Other()
+        {
+            Skunk eater = new Skunk();
+            OtherEdibleCritters food = new OtherEdibleCritters();
+            Assert.True(eater.Eat(food));
+        }
+
+        /// <summary>
+        /// Verifies that interfaces are implemented.
+        /// Weasel implements IEat (inherited from Animal).
+        /// OtherEdibleCritters implements IAmDinner (directly).
+        /// </summary>
+        [Fact]
+        public void Weasel_Eats_Other()
+        {
+            Weasel eater = new Weasel();
+            OtherEdibleCritters food = new OtherEdibleCritters();
+            Assert.True(eater.Eat(food));
+        }
+
+        /// <summary>
+        /// Verifies that interfaces are implemented.
+        /// Wolf implements IEat (inherited from Animal).
+        /// Weasel implements IAmDinner (directly).
+        /// </summary>
+        [Fact]
+        public void Wolf_Eats_Weasel()
+        {
+            Wolf eater = new Wolf();
+            Weasel food = new Weasel();
+            Assert.True(eater.Eat(food));
+        }
+
+        /// <summary>
+        /// verifies that Mammal derivatives override abstract method 'Travel'
+        /// Carnivore derivatives override with "walk"
+        /// </summary>
+        [Fact]
+        public void Bear_Walks()
+        {
+            Mammal traveler = new Bear();
+            Assert.Equal("walk", traveler.Travel());
+        }
+
+        /// <summary>
+        /// verifies that Mammal derivatives override abstract method 'Travel'
+        /// Carnivore derivatives override with "walk"
+        /// </summary>
+        [Fact]
+        public void Lion_Walks()
+        {
+            Mammal traveler = new Lion();
+            Assert.Equal("walk", traveler.Travel());
+        }
+
+        /// <summary>
+        /// verifies that Mammal derivatives override abstract method 'Travel'
+        /// Carnivore derivatives override with "walk"
+        /// </summary>
+        [Fact]
+        public void Skunk_Walks()
+        {
+            Mammal traveler = new Skunk();
+            Assert.Equal("walk", traveler.Travel());
+        }
+
+        /// <summary>
+        /// verifies that Mammal derivatives override abstract method 'Travel'
+        /// Carnivore derivatives override with "walk"
+        /// </summary>
+        [Fact]
+        public void Weasel_Walks()
+        {
+            Mammal traveler = new Weasel();
+            Assert.Equal("walk", traveler.Travel());
+        }
+
+        /// <summary>
+        /// verifies that Mammal derivatives override abstract method 'Travel'
+        /// Carnivore derivatives override with "walk"
+        /// </summary>
+        [Fact]
+        public void Wolf_Walks()
+        {
+            Mammal traveler = new Wolf();
+            Assert.Equal("walk", traveler.Travel());
+        }
+
+        /// <summary>
+        /// verifies that Mammal derivatives override abstract method 'Travel'
+        /// Cetacean derivatives override with "swim"
+        /// </summary>
+        [Fact]
+        public void Orca_Swims()
+        {
+            Cetacean traveler = new Orca();
+            Assert.Equal("swim", traveler.Travel());
+        }
+
+        /// <summary>
+        /// verifies that Mammal derivatives override abstract method 'Travel'
+        /// Cetacean derivatives override with "swim"
+        /// </summary>
+        [Fact]
+        public void Narwhal_Swims()
+        {
+            Cetacean traveler = new Narwhal();
+            Assert.Equal("swim", traveler.Travel());
+        }
+
+        /// <summary>
+        /// verifies that Mammal derivatives override abstract method 'Travel'
+        /// Cetacean derivatives override with "swim"
+        /// </summary>
+        [Fact]
+        public void Dolphin_Swims()
+        {
+            Cetacean traveler = new Dolphin();
+            Assert.Equal("swim", traveler.Travel());
+        }
     }
 }

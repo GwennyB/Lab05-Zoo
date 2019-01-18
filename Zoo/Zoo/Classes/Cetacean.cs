@@ -20,9 +20,10 @@ namespace Zoo.Classes
         /// Inherited from Animal.
         /// Describes instance's travel to the console.
         /// </summary>
-        public override void Travel()
+        public override string Travel()
         {
             Console.WriteLine("Just keep swimming, just keep swimming, just keep swimming...swimmming...swimming...");
+            return "swim";
         }
     }
 }

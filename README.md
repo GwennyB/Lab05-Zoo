@@ -26,7 +26,14 @@ IMAGE: Map of classes, updated to include interfaces.
 ![class map](assets/class-map-with-interfaces.PNG)
 
 ## Testing
-The test suite confirms that inheritence and polymorphism are evident in the classes, that all concrete classes can be instantiated, and that interface are properly implemented.
+The test suite verifies the following:
+  - Each concrete class exhibits the inherited behaviors 'Eat' (from Animal class) and 'Travel' (from Mammal class)
+  - Each implementation of the interfaces 'IEat' and 'IAmDinner' is successfully exercised
+    *** 'IEat' forces the method 'Eat' into all in 'Animal' class, which is subsequently inherited by all. So interface implementation and method override are both proven by demonstrating 'Eat' by any inheriting/implementing class.***
+  - Each concrete class inherits and overrides the property 'Species' (from Animal) on instantiation.
+    *** These tests instantiate each concrete class as type 'Animal'. So the tests prove both that the property is inherited and overridden, and also that the object identifies as type 'Animal'. ***
+  - Bear class successfully overrides the inherited virtual property 'HangsWithPosse'.
+    *** This is overridden by other classes as well, but testing only proves the override for Bear. ***
 ![unit tests](assets/unit-tests.PNG)
 
 ## Results

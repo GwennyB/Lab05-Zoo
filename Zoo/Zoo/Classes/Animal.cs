@@ -11,7 +11,8 @@ namespace Zoo.Classes
         public abstract string Species { get; set; }
         public abstract string BodyCovering { get; set; }
         public abstract bool LivesOnLand { get; set; }
-        public abstract bool HangsWithPosse { get; set; }
+        public virtual bool HangsWithPosse { get; set; } = true;
+        public virtual bool Stinky { get; set; } = false;
 
         /// <summary>
         /// Implementation of IEat interface
@@ -30,6 +31,7 @@ namespace Zoo.Classes
         {
             return babies;
         }
+
 
     }
 }
