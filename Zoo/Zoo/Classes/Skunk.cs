@@ -25,6 +25,13 @@ namespace Zoo.Classes
             set { _garbageBool = value; }
         }
 
+        public override bool Stinky
+        {
+            get { return true; }
+            set { _garbageBool = value; }
+        }
+
+
         /// <summary>
         /// Reports a successful meal
         /// </summary>

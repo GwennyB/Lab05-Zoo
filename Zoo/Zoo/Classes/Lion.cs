@@ -19,11 +19,6 @@ namespace Zoo.Classes
             set { _garbageString = value; }
         }
 
-        public override bool HangsWithPosse {
-            get { return true; }
-            set { _garbageBool = value; }
-        }
-
         /// <summary>
         /// Instantiates new class instance for each baby;
         /// Reports births to console;
