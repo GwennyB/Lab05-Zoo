@@ -9,6 +9,25 @@ Abstract classes are defined for each non-specific 'grouping' of animals with in
 IMAGE: Map of classes, with inheritance and abstraction.
 ![class map](assets/class-map.png)
 
+## OOP Principles
+INHERITANCE - This states that a class can be built from another (base) class, and in doing so, it 'inherits' all of its members (ie - properties, methods). 
+  The Animal class is the 'base' class from which all of the individual animals inherit the properties Species, BodyCovering, etc. and the methods Eat and GiveBirth.
+  Mammal (an Animal derivative) passes Travel and Hibernate to its 'child' classes.
+POLYMORPHISM - This states that inherited properties and methods can (in certain cases) be altered (or overridden) once they by the class that derives them.
+  The Mammal class changes BodyCovering to "hair", and passes that to its children.
+  The Skunk class changes Stinky to 'true'. If Skunk had children, it would pass Stinky = true to its children, and a child could also change it back to 'false' (if it lacks scent glands).
+ABSTRACTION - This states that a class or inherited property/method can exist for the sole purpose of passing on a template to deriving classes. It is something that is only used after inheritance. Concrete is the opposite of abstract - it's something that can get used at the level at which it's defined, and it absolutely MUST get defined at (or before) the concrete level at which it's instantiated. Virtual is the 'in between' answer - it *can* be overridden by children, but it doesn't have to be.
+  Animal class is abstract. One can't build an 'Animal' instance directly - one needs the additional properties and methods that are 'built up' by the inheritance chain before there is an adequate template to build an instance. A Bear can be instantiated, and it includes all the properties and methods of all its ancestors (Carnivore, Mammal, and Animal), as well as any properties and methods that are introduced at its own level (none in this case, but we could add a uniquely bear-like property or method to Bear, and then only Bears have them).
+  Species is an abstract property. Every instance of a concrete animal derivative has a species, and it *must* be overridden.
+  HangsWithPosse is a virtual property. Every instance of a concrete derivative has this property, and it is defined by default as being 'true', but Bear overrides it... because it doesn't like others.
+ENCAPSULATION - This states that content of all types is both grouped (logically, and per the coder's discretion) and access to that group is controlled as:
+  - 'public' - any group (class) can access it 
+      (all custom classes in this application are public)
+  - 'private' - access is limited to inside the group (class) for which 'private' is specified
+      (all backing stores in this application are private)
+  - 'protected' - access is limited to inside the group (class) and any derivatives of it
+      (not used in this application)
+
 ## Interfaces
 Like classes, interfaces are collections of members that can be inherited by deriving classes. Like abstract classes, an interface can't be instantiated, and its members must be resolved before a concrete descendent is instantiated. Unlike abstract classes, an interface can contain only properties and methods, and it's intended to address *only* behaviors (rather than characteristics) of derived instances. Also unlike abstract classes, a deriving class can inherit from an unlimited number of interfaces (it isn't bound by the single inheritance rule governing classes). The real power of an interface is that it offers common (ie - library) behaviors that can enable interaction between objects of dissimilar classes.
 
