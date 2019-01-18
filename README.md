@@ -23,12 +23,12 @@ This interface is implemented by each species directly (ie - there isn't another
   Example: Narwhal class implements 'IAmDinner', so its type definition includes 'IAmDinner'. Orca can eat Narwhal by calling 'Eat(narwhal)' (where 'narwhal' is an instance of class Narwhal).
 
 IMAGE: Map of classes, updated to include interfaces.
-![class map](assets/class-map-with-interfaces.png)
+![class map](assets/class-map-with-interfaces.PNG)
 
 ## Testing
 The test suite confirms that inheritence and polymorphism are evident in the classes, that all concrete classes can be instantiated, and that interface are properly implemented.
-![unit tests](assets/unit-tests.png)
+![unit tests](assets/unit-tests.PNG)
 
 ## Results
 Program.cs demonstrates class instantiation and interface implementation.
-![console output](assets/program-output.png)
+![console output](assets/program-output.PNG)
